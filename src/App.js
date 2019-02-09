@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Form from './Components/Form';
+import Radio from './Components/Radio';
 import './App.css';
+import Popup from './Components/Popup'
+
 
 class App extends Component {
 constructor(props){
@@ -28,6 +31,8 @@ showCoords(event) {
     return (
       <div className="App">
        <h1>Hello World!</h1>
+       <Form/>
+       <Radio/>
        <div>
          <div>X={this.state.marker.x}</div>
          <div>Y={this.state.marker.y}</div>
@@ -40,4 +45,4 @@ showCoords(event) {
   };
 };
 
-export default App;
+export default App
