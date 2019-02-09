@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class AllShots extends Component {
  
     state = { data: [] };
-    URL = 'https://goodie-nba.starlineventures.com/api/allShots';
+    URL = 'http://goodie-nba.starlineventures.com/api/allShots';
     componentDidMount() {
         // when component mounted, start a GET request
         // to specified URL
@@ -17,13 +17,13 @@ class AllShots extends Component {
 
     render() {
 
-        <ul>
+        return (<ul>
         {
           this.state.data.map(function(record){
             return <li key={record.id}>{record.name} - {record.x} { record.y } { record.madeMiss}</li>;
           })
         }
-        </ul>
+        </ul>);
 
     }
 
