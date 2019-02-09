@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Form from './Components/Form';
+import Radio from './Components/Radio';
 import './App.css';
 
 class App extends Component {
@@ -7,6 +8,8 @@ class App extends Component {
     return (
       <div className="App">
        <h1>Hello World!</h1>
+       <Form/>
+       <Radio/>
       </div>
     );
   }
