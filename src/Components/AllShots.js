@@ -8,11 +8,17 @@ class AllShots extends Component {
     componentDidMount() {
         // when component mounted, start a GET request
         // to specified URL
-        fetch(URL)
+        try {
+
+            fetch('http://goodie-nba.starlineventures.com/api/allShots')
           // when we get a response map the body to json
           .then(response => response.json())
           // and update the state data to said json
-          .then(data => this.setState({ data }));
+          .then(data => this.setState({ data: data.json }));
+        } catch(ex) {
+            console.log(ex);
+        }
+        
       }
 
     render() {
