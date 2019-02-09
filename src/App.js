@@ -7,6 +7,7 @@ class App extends Component {
     return (
       <div className="App">
        <h1>Hello World!</h1>
+       { <img style={{height:"550px"}} img src={require('./Images/court.png')} alt=''/>   }
       </div>
     );
   }
