@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Select from "react-select";
 
-const basketballPlayers = [
+let basketballPlayers = [
   { label: "Lebron James", value: 1 },
   { label: "Kobe Bryant", value: 2 },
   { label: "Stephen Curry", value: 3 },
@@ -21,11 +21,24 @@ const basketballPlayers = [
 ];
 
 class Form extends Component {
+
+    state = { players: []}
+
+    componentDidMount() {
+        fetch('http://goodie-nba.starlineventures.com/api/players')
+        .then(results => results.json())
+        .then(data => {
+            console.log(data);
+            this.setState({ players: data });
+        })
+
+      }
+
   render() {
     return (
       <div className="form">
         <div className="container">
-          <Select options={basketballPlayers} onChange={opt => console.log(opt.label, opt.value)} />
+          <Select options={this.state.players} onChange={opt => console.log(opt.label, opt.value)} />
          
         </div>
       </div>
