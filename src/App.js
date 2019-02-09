@@ -55,9 +55,10 @@ showCoords(event) {
        <div>
          <div>X={this.state.marker.x}</div>
          <div>Y={this.state.marker.y}</div>
-         <span class="dot" style={ dotStyle }></span>
+         
       </div> */}
       <Button onClick={ this.handleShowShots }>Show Shots</Button>
+      <span class="dot" style={ dotStyle }></span>
        <img style={{height:"550px"}} onClick={ (event) => this.showCoords(event) } img src={require('./Images/court.png')} alt='' />
        <Modal show={this.state.show} onHide={this.handleClose}>
             <Modal.Header closeButton>
